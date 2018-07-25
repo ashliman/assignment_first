@@ -21,11 +21,10 @@
     font-weight: 500;
 
 }
-@media screen and (max-height: 767px) {
+@media screen and (max-width: 1024px) {
 .card{
     position: relative !important;
 }
-
 .loginform{
 height:auto !important;
 padding-top: 20px;
