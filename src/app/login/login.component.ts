@@ -39,13 +39,6 @@ export class LoginComponent implements OnInit {
   });
  }
 
-  // createForm() {
-  //   this.Loginform = new FormGroup({
-  //       email: this.email,
-  //       password: this.password
-  //   });
-  // }
-
   onSubmit()
   {
     if (this.Loginform.valid) {
@@ -58,8 +51,8 @@ export class LoginComponent implements OnInit {
             localStorage['userProfile']=JSON.stringify(res);
             localStorage.setItem('loginType','custom');
             this._router.navigate(['/dashboard']);
+		 this.Loginform.reset(); 
 		  }else{
-		  console.log('Invalid');
 		  this.showError=true;
 		  }
           }
@@ -69,7 +62,7 @@ export class LoginComponent implements OnInit {
         }
       );
 
-      this.Loginform.reset();
+     
     }
   }
   
