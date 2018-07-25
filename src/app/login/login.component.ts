@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
   password:FormControl;
   loginData: any;
   loggedDetails:any;
+  showError:boolean=false;
 
   constructor(private _router: Router, private loginServ:LoginService, private socialAuthService: AuthService) { }
 
@@ -53,9 +54,14 @@ export class LoginComponent implements OnInit {
       this.loginServ.login(this.loginData).subscribe(res => {               
           if(res)
           {
+		  if(res.email==this.email.value && res.password==this.password.value){
             localStorage['userProfile']=JSON.stringify(res);
             localStorage.setItem('loginType','custom');
             this._router.navigate(['/dashboard']);
+		  }else{
+		  console.log('Invalid');
+		  this.showError=true;
+		  }
           }
           else{
            

@@ -27,6 +27,7 @@
             </div>
            
             <div class="col-md-12 pl-1 text-center">
+			<p *ngIf="showError">*Invalid username or password</p>
               <input type="submit" value="Submit" class="btn btn-success" [disabled]="!Loginform.valid">
               <hr>
               <button (click)="socialSignIn('google')" class="btn btn-primary">Sign in with Google</button>    
