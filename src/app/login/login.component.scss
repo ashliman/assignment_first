@@ -1,0 +1,36 @@
+.main-wrapper{
+    height: auto;
+    padding: 40px;
+    margin: 0px auto !important; 
+    background: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/4zx2oCU_lijl3z600/subtle-light-leak-on-black-background-moving-red-lens-flare-overlay-on-top-of-footage-with-screen-opacity-for-vintage-super-effect_rxv1-xh0_thumbnail-full01.png') no-repeat;
+    background-size: cover;
+}
+.loginform{
+    margin: 0px auto;
+    height: 100vh;    
+}
+.card{
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.btn{
+    font-size: 14px;
+    font-weight: 500;
+
+}
+@media screen and (max-height: 767px) {
+.card{
+    position: relative !important;
+}
+.loginform{
+height:auto !important;
+padding-top: 20px;
+max-width: 100% !important;
+flex: 0 0 100% !important; 
+}
+
+
+}

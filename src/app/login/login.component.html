@@ -1,0 +1,44 @@
+<div class="row main-wrapper">
+  <div class="col-sm-12 col-md-4 loginform">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="title">Login Now</h5>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="Loginform" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Email Address" autocomplete="off" formControlName="email" maxlength="40">
+                <div class="form-error" *ngIf="email.errors && (email.dirty || email.touched)">
+                  <span *ngIf="email.errors.required">* Email is required</span>
+                  <span *ngIf="email.errors.pattern">* Invalid email address</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <input type="password" class="form-control" placeholder="Password" autocomplete="off" formControlName="password" maxlength="20">
+                <div class="form-error" *ngIf="password.errors && (password.dirty || password.touched)">
+                  <span *ngIf="password.errors.required">* Password is required</span>
+                </div>
+              </div>
+
+            </div>
+           
+            <div class="col-md-12 pl-1 text-center">
+              <input type="submit" value="Submit" class="btn btn-success" [disabled]="!Loginform.valid">
+              <hr>
+              <button (click)="socialSignIn('google')" class="btn btn-primary">Sign in with Google</button>    
+              <button (click)="socialSignIn('facebook')" class="btn btn-info">Sign in with Facebook</button>    
+            </div>
+            <div class="col-md-12 text-center"><br>
+            <a [routerLink]="['/register']">Create Account ?</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+

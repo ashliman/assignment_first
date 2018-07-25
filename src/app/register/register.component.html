@@ -1,0 +1,57 @@
+<div class="row main-wrapper">
+  <div class="col-sm-12 col-md-4 loginform">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="title">Register Now</h5>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="Regform" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Email Address" autocomplete="off" formControlName="email" maxlength="40">
+                <div class="form-error" *ngIf="email.errors && (email.dirty || email.touched)">
+                  <span *ngIf="email.errors.required">* Email is required</span>
+                  <span *ngIf="email.errors.pattern">* Invalid email address</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Name" autocomplete="off" formControlName="name" maxlength="40">
+                <div class="form-error" *ngIf="name.errors && (name.dirty || name.touched)">
+                  <span *ngIf="name.errors.required">* Name is required</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <input type="password" class="form-control" placeholder="Password" autocomplete="off" formControlName="password" maxlength="20">
+                <div class="form-error" *ngIf="password.errors && (password.dirty || password.touched)">
+                  <span *ngIf="password.errors.required">* Password is required</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <input type="password" class="form-control" placeholder="Confirm - Password" autocomplete="off" formControlName="confirmpassword" maxlength="20">
+                <div class="form-error" *ngIf="confirmpassword.errors && (confirmpassword.dirty || confirmpassword.touched)">
+                  <span *ngIf="confirmpassword.errors.required">* Confirm password is required</span>
+                  <span *ngIf="cpwd.hasError('invalid')">* Password mismatch </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 pl-1 text-center">
+              <input type="submit" value="Submit" class="btn btn-success" [disabled]="!Regform.valid">
+              <hr>
+            </div>
+            <div class="col-md-12 text-center"><br>
+            <a [routerLink]="['/login']">Already have an Account?</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+
