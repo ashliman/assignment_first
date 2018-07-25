@@ -67,6 +67,7 @@ export class RegisterComponent implements OnInit {
       this.regServ.register(this.regData).subscribe(res => {               
           if(res)
           {
+            this.Regform.reset();
             this._router.navigate(['/login']);
           }
           else{
@@ -75,7 +76,7 @@ export class RegisterComponent implements OnInit {
         }
       );
 
-      this.Regform.reset();
+      
     }
   }
 
